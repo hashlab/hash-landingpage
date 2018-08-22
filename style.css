@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+span {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.half-box {
+  width: 50%;
+  border: solid 1px red;
+  height: 850px;
+}

@@ -2,8 +2,65 @@
   box-sizing: border-box;
 }
 
+body {
+	background-color: #f3f3f3;
+	padding: 0;
+	margin: 0;
+}
+
 span {
-  font-family: 'Noto Sans', sans-serif;
+}
+
+@font-face {
+	font-family: MilliardBold;
+	src: url(MilliardBold.otf);
+}
+@font-face {
+	font-family: MilliardHairline;
+	src: url(MilliardHairline.otf);
+}
+@font-face {
+	font-family: MilliardLight;
+	src: url(MilliardLight.otf);
+}
+@font-face {
+	font-family: Gizmo;
+	src: url(Gizmo.ttf);
+}
+
+h1 {
+	font-family: MilliardHairline;
+}
+
+h2 {
+	font-family: MilliardHairline;
+  font-size: 62px;
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.97;
+  letter-spacing: normal;
+  color: #f3f3f3;
+}
+
+.header-1 {
+  width: 578px;
+}
+
+.header-highlight {
+  color: #c9ecff;
+	font-family: MilliardHairline;
+  font-size: 62px;
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.97;
+  letter-spacing: normal;
+}
+
+
+.header-link {
+	color: #f3f3f3;
 }
 
 .container {
@@ -11,8 +68,72 @@ span {
   flex-wrap: wrap;
 }
 
-.half-box {
-  width: 50%;
-  border: solid 1px red;
-  height: 850px;
+.left-box {
+  /* border: solid 1px red; */
+	width: 798px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+}
+.span-header-1 {
+  width: 507px;
+  height: 84px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 19px;
+  line-height: 1.47;
+  color: #7e7e7e;
+}
+
+.right-box {
+  /* border: solid 1px red; */
+	width: calc(100% - 798px);
+  height: 900px;
+}
+
+.bg-squares-1 {
+  background-image: url("./L1_BLACK.png");
+  color: #7e7e7e;
+}
+.button {
+	font-family: MilliardLight;
+  font-size: 16.2px;
+	padding: 18px;
+  letter-spacing: 1.1px;
+	color: #f3f3f3;
+  border: solid 1px #f3f3f3;
+  transition: all;
+  text-decoration: none;
+  transition: all 100ms ease-out;
+}
+.button:hover {
+  background-color: #f3f3f3;
+  color: #2c2c2c;
+}
+.blue {
+  color: #c9ecff;
+  border: solid 1px #c9ecff;
+  margin-left: 150px;
+}
+.blue:hover {
+  background-color: #c9ecff;
+  color: #2c2c2c;
+}
+.bg-squares-2 {
+  background-image: url("./L2_BLUE.png");
+}
+.bg-squares-3 {
+  background-image: url("./L3_BLACK.png");
+}
+.bg-squares-4 {
+  background-image: url("./L4_WHITE.png");
+}
+
+.pipefy-form {
+	width: 100%;
+	height: 800px;
+}
+
+header {
+	background-color: #232323;
 }

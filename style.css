@@ -72,7 +72,7 @@ header {
 }
 header img {
   margin-left: 45px;
-  margin-right: 100px;
+  margin-right: 10px;
 
 }
 
@@ -113,7 +113,8 @@ header img {
   font-style: italic;
   justify-content: flex-end;
   word-wrap: normal;
-  width: 300px;
+  width: 200px;
+  text-align: right;
 }
 
 .container {
@@ -141,8 +142,12 @@ header img {
 
 .right-box {
   /* border: solid 1px red; */
-	width: calc(100% - 798px);
+  width: calc(100% - 798px);
+  min-width: 30vw;
   height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bg-squares-1 {
@@ -180,6 +185,28 @@ header img {
   color: #4e6e7d;
 }
 
+.three-texts {
+  flex-direction: column;
+}
+.three-texts > div {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.three-texts > div > div {
+  width: 192px;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #6f97aa;
+  font-family: 'Noto Sans', sans-serif;
+}
+.three-texts > div > div > h3 {
+  font-family: MilliardBold;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.08;
+}
+
 .bg-squares-3 {
   background-image: url("./L3_BLACK.png");
 }
@@ -187,6 +214,34 @@ header img {
   margin-top: 277px;
   margin-bottom: 30px;
 }
+
+.six-texts {
+  flex-direction: column;
+}
+.six-texts > div {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.six-texts > div > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.six-texts > div > div > div {
+  width: 192px;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #6f97aa;
+  font-family: 'Noto Sans', sans-serif;
+}
+.six-texts > div > div > h3 {
+  font-family: MilliardBold;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.08;
+}
+
 .bg-squares-4 {
   background-image: url("./L4_WHITE.png");
   height: 1005px;
@@ -238,9 +293,46 @@ footer {
   display: flex;
   align-items: center;
   line-height: 25px;
+  font-family: 'Noto Sans', sans-serif;
+  margin-bottom: 20px;
+  color: #b9b9b9;
+}
+
+.info {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95px;
+}
+
+.info > span {
+  font-size: 13px;
+}
+
+.info img {
+  margin-right: 5px;
 }
 
 .media {
   position: absolute;
   right: 0;
+  font-family: MilliardLight;
+  font-size: 16px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95px;
+}
+
+.media > div > img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.media > div {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
 }

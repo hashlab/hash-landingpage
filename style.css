@@ -18,6 +18,11 @@ body {
   font-weight: bold;
 }
 @font-face {
+	font-family: MilliardExtraLight;
+  src: url(MilliardBold.otf);
+  font-weight: bold;
+}
+@font-face {
 	font-family: MilliardHairline;
 	src: url(MilliardHairline.otf);
 }
@@ -26,12 +31,16 @@ body {
 	src: url(MilliardLight.otf);
 }
 @font-face {
+	font-family: MilliardExtraLight;
+	src: url(MilliardExtraLight.otf);
+}
+@font-face {
 	font-family: Gizmo;
 	src: url(Gizmo.ttf);
 }
 
 h1 {
-  font-family: MilliardHairline;
+  font-family: MilliardExtraLight;
   width: 545px;
   height: 372px;
   font-size: 135px;
@@ -55,8 +64,21 @@ h2 {
   color: #f3f3f3;
 }
 
+header {
+  display: flex;
+  font-family: MilliardLight;
+  background-color: #232323;
+  align-items: center;
+}
+header img {
+  margin-left: 45px;
+  margin-right: 100px;
+
+}
+
 .header-1 {
   width: 578px;
+  margin-bottom: 30px;
 }
 
 .header-highlight {
@@ -68,12 +90,6 @@ h2 {
   font-stretch: normal;
   letter-spacing: normal;
   display: inline;
-}
-
-header {
-  display: flex;
-  font-family: MilliardLight;
-	background-color: #232323;
 }
 
 .header-link {
@@ -88,16 +104,16 @@ header {
   transition: all 100ms ease-out;
 }
 .header-link:hover {
-  background-color: #f3f3f3;
-	color: #232323;
+  opacity: 0.5;
 }
 .header-link.blue {
   position: absolute;
   right: 0;
-  margin-right: 20px;
-  display: fixed;
   color: #c9ecff;
   font-style: italic;
+  justify-content: flex-end;
+  word-wrap: normal;
+  width: 300px;
 }
 
 .container {
@@ -112,6 +128,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 70px;
+  background-repeat: no-repeat;
 }
 .span-header {
   width: 507px;
@@ -135,17 +152,18 @@ header {
 .button {
 	font-family: MilliardLight;
   font-size: 16.2px;
-	padding: 18px;
+	padding: 10px 18px;
   letter-spacing: 1.1px;
 	color: #f3f3f3;
   border: solid 1px #f3f3f3;
   transition: all;
   text-decoration: none;
   transition: all 100ms ease-out;
+  display: flex;
+  align-items: center;
 }
 .button:hover {
-  background-color: #f3f3f3;
-  color: #2c2c2c;
+  opacity: 0.5;
 }
 .button.blue {
   color: #c9ecff;
@@ -153,8 +171,7 @@ header {
   margin-left: 150px;
 }
 .blue:hover {
-  background-color: #c9ecff;
-  color: #2c2c2c;
+  opacity: 0.5;
 }
 .bg-squares-2 {
   background-image: url("./L2_BLUE.png");
@@ -166,9 +183,14 @@ header {
 .bg-squares-3 {
   background-image: url("./L3_BLACK.png");
 }
+.bg-squares-3 h2{
+  margin-top: 277px;
+  margin-bottom: 30px;
+}
 .bg-squares-4 {
   background-image: url("./L4_WHITE.png");
-  height: 1060px;
+  height: 1005px;
+  padding: 60px;
 }
 .bg-squares-4 h2 {
   color: #85acbc;
@@ -187,4 +209,38 @@ header {
 
 .pp-new-public-form-embedded {
   padding: 0;
+}
+
+.fancyE {
+  width: 30px;
+  opacity: 0.5;
+  font-family: MilliardLight;
+  font-size: 40px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.27;
+  letter-spacing: normal;
+  text-align: center;
+  color: #90b7cb;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.investors {
+  margin-top: 30px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  line-height: 25px;
+}
+
+.media {
+  position: absolute;
+  right: 0;
 }

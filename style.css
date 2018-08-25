@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
 }
 
 body {
@@ -34,10 +38,6 @@ body {
 	font-family: MilliardExtraLight;
 	src: url(MilliardExtraLight.otf);
 }
-@font-face {
-	font-family: Gizmo;
-	src: url(Gizmo.ttf);
-}
 
 h1 {
   font-family: MilliardExtraLight;
@@ -65,12 +65,17 @@ h2 {
 }
 
 header {
-  display: flex;
+  position: fixed;
+  width: 100vw;
+}
+
+header div {
   font-family: MilliardLight;
   background-color: #232323;
   align-items: center;
+  display: flex;
 }
-header img {
+header div img {
   margin-left: 45px;
   margin-right: 10px;
 
@@ -102,6 +107,7 @@ header img {
   width: 100px;
   text-decoration: none;
   transition: all 100ms ease-out;
+  cursor: pointer;
 }
 .header-link:hover {
   opacity: 0.5;
@@ -186,7 +192,7 @@ header img {
 }
 
 .three-texts {
-  flex-direction: column;
+  align-items: flex-start;
 }
 .three-texts > div {
   display: flex;
@@ -217,8 +223,10 @@ header img {
 
 .six-texts {
   flex-direction: column;
+  justify-content: flex-start;
 }
 .six-texts > div {
+  margin-top: 30px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -335,4 +343,13 @@ footer {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
+}
+
+.ilustra {
+  position: fixed;
+  width: 605px;
+  height: 556px;
+  transition: all 0.4s ease-out;
+  transform: translate(0, -70px);
+  z-index: -1;
 }

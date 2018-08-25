@@ -67,6 +67,7 @@ h2 {
 header {
   position: fixed;
   width: 100vw;
+  z-index: 1;
 }
 
 header div {
@@ -159,6 +160,11 @@ header div img {
 .bg-squares-1 {
   background-image: url("./L1_BLACK.png");
   color: #7e7e7e;
+  padding-left: 50px;
+}
+.bg-squares-1 > * {
+  opacity: 0;
+  transition: all 0.2s ease-out;
 }
 .button {
 	font-family: MilliardLight;
@@ -186,6 +192,11 @@ header div img {
 }
 .bg-squares-2 {
   background-image: url("./L2_BLUE.png");
+  padding-left: 50px;
+}
+.bg-squares-2 > * {
+  opacity: 0;
+  transition: all 0.2s ease-out;
 }
 .bg-squares-2 .span-header {
   color: #4e6e7d;
@@ -199,6 +210,7 @@ header div img {
   justify-content: space-between;
   width: 90%;
 }
+
 .three-texts > div > div {
   width: 192px;
   font-size: 14px;
@@ -211,6 +223,11 @@ header div img {
   font-size: 26px;
   font-weight: bold;
   line-height: 1.08;
+}
+
+.box1-3, .box2-3, .box3-3 {
+  transition: all 0.3s ease-out;
+  opacity: 0;
 }
 
 .bg-squares-3 {

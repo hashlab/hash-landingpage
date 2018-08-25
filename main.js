@@ -1,3 +1,4 @@
+window.onload = () => {
 
 function lerp(v0, v1, t) {
   t = Math.min(1, t)
@@ -25,7 +26,7 @@ const ilustras = {
 const startY = -50
 
 Promise.resolve()
-.then(wait(120))
+.then(wait(500))
 .then(() => {
   if (window.scrollY !== 0) { throw 0 }
   ilustras.fourthBig.style.transform = `translate(0, ${startY}px)`
@@ -49,12 +50,56 @@ Promise.resolve()
   scrollTriggered()
 })
 
+Promise.resolve()
+.then(wait(100))
+.then(() => { document.querySelector('.bg1-1').style.opacity = 1 })
+.then(() => { document.querySelector('.bg1-1').style.transform = 'translate(20px, 0)' })
+.then(wait(100))
+.then(() => { document.querySelector('.bg1-2').style.opacity = 1 })
+.then(() => { document.querySelector('.bg1-2').style.transform = 'translate(20px, 0)' })
+.then(wait(100))
+.then(() => { document.querySelector('.bg1-3').style.opacity = 1 })
+.then(() => { document.querySelector('.bg1-3').style.transform = 'translate(20px, 0)' })
+
 window.onscroll = scrollTriggered
 
 var snapTimer = null
+var threeTextsShown = false
+
+function threeTextsTest (scroll) {
+  if (scroll > 700) {
+    threeTextsShown = true
+    Promise.resolve()
+      .then(wait(150))
+      .then(() => { document.querySelector('.box1-3').style.opacity = 1 })
+      .then(() => { document.querySelector('.box1-3').style.transform = 'translate(0, 20px)' })
+      .then(wait(150))
+      .then(() => { document.querySelector('.box2-3').style.opacity = 1 })
+      .then(() => { document.querySelector('.box2-3').style.transform = 'translate(0, 20px)' })
+      .then(wait(150))
+      .then(() => { document.querySelector('.box3-3').style.opacity = 1 })
+      .then(() => { document.querySelector('.box3-3').style.transform = 'translate(0, 20px)' })
+
+    Promise.resolve()
+      .then(wait(100))
+      .then(() => { document.querySelector('.bg2-1').style.opacity = 1 })
+      .then(() => { document.querySelector('.bg2-1').style.transform = 'translate(20px, 0)' })
+      .then(wait(100))
+      .then(() => { document.querySelector('.bg2-2').style.opacity = 1 })
+      .then(() => { document.querySelector('.bg2-2').style.transform = 'translate(20px, 0)' })
+      .then(wait(100))
+      .then(() => { document.querySelector('.bg2-3').style.opacity = 1 })
+      .then(() => { document.querySelector('.bg2-3').style.transform = 'translate(20px, 0)' })
+  }
+}
 
 function scrollTriggered () {
   const scroll = window.scrollY
+
+  if (!threeTextsShown) {
+    threeTextsTest(scroll)
+  }
+
   ilustras.fourthBig.style.transition = 'none'
   ilustras.thirdBig.style.transition = 'none'
   ilustras.secondBig.style.transition = 'none'
@@ -107,8 +152,14 @@ function thirdAnimation (t1, t2, t3, t4) {
     }px)`
     return
   }
+  if (t2 < 1) {
+    ilustras.thirdBig.style.transform = `translate(0, ${
+      lerp(250, 150, t2 - 0.2 * (1 - t2) + 0.15 * (t2))
+    }px)`
+    return
+  }
   ilustras.thirdBig.style.transform = `translate(0, ${
-    lerp(250, -1500, t3)
+    lerp(150, -1500, t3)
   }px)`
 }
 
@@ -119,22 +170,40 @@ function fourthAnimation (t1, t2, t3, t4) {
     }px)`
     return
   }
+  if (t2 < 1) {
+    ilustras.fourthBig.style.transform = `translate(0, ${
+      lerp(250, 150, t2 - 0.3 * (1 - t2) + 0.1 * (t2))
+    }px)`
+    return
+  }
   ilustras.fourthBig.style.transform = `translate(0, ${
-    lerp(250, 40, t4)
+    lerp(150, 40, t3)
   }px)`
 }
 if (window.scrollY !== 0) {
   scrollTriggered()
 }
 
+var scrollingTimer;
+window.addEventListener('scroll', () => {
+	window.clearTimeout( scrollingTimer )
+	scrollingTimer = setTimeout(() => {
+    const snap = scrollSteps.find(s =>
+      s - 150 < scrollY &&
+      s + 150 > scrollY &&
+      s < 2650
+    )
+    if (snap) {
+      window.scroll({ top: snap, behavior: 'smooth'})
+    }
+	}, 66)
+}, false)
 
+const frame = document.createElement('iframe')
+console.table(frame)
+frame.src = 'http://app.pipefy.com/public/form/Gp5ojRgJ?embedded=true'
+frame.frameBorder = 0
+frame.classList = 'pipefy-form' 
+document.querySelector('.bg-squares-4').appendChild(frame)
 
-
-
-
-
-
-
-
-
-
+}

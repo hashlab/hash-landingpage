@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:200,400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="UTF-8">
   <title>Hash</title>
@@ -11,16 +11,16 @@
   <header>
     <div>
       <img src="SMALL/logo_menu.png" width="112px" height="33px"/>
-      <a class="header-link" onclick="window.scrollTo(0, 0)">
+      <a class="header-link" onclick="window.scroll({ top: 0, behavior: 'smooth'})">
         home
       </a>
-      <a class="header-link" onclick="window.scrollTo(0, 850);">
+      <a class="header-link" onclick="window.scroll({ top: 850, behavior: 'smooth'})">
         about
       </a>
-      <a class="header-link"  onclick="window.scrollTo(0, 1750);">
+      <a class="header-link" onclick="window.scroll({ top: 1750, behavior: 'smooth'})">
         specs
       </a>
-      <a class="header-link"  onclick="window.scrollTo(0, 2650);">
+      <a class="header-link" onclick="window.scroll({ top: 2650, behavior: 'smooth'})">
         contact
       </a>
       <a class="header-link blue" href="#">
@@ -32,7 +32,7 @@
   <div class="container">
 
     <div class="left-box bg-squares-1">
-      <div>
+      <div class="bg1-1">
         <h2 class="header-1">
           Traga o ecossistema<br/>
           de pagamentos<br/>
@@ -40,10 +40,10 @@
           seu <span class="header-highlight">negócio</span>
         </h2>
       </div>
-      <span class="span-header">
+      <span class="span-header bg1-2">
         Permitimos que qualquer empresa opere como subadquirente para suas redes, gerando <b>experiências financeiras customizadas</b> em toda sua cadeia.
       </span>
-			<div style="margin-top: 60px;display: flex;">
+			<div style="margin-top: 60px;display: flex;" class="bg1-3">
 				<a class="button" href="#">
 					saiba mais <img src="SMALL/down.png" width="16px" height="16px" style="margin-left: 8px;"/>
 				</a>
@@ -63,25 +63,24 @@
     <!--  ========================================== -->
 
     <div class="left-box bg-squares-2">
-      <h1>
+      <h1 class="bg2-1">
         NÓS<br>
         SOMOS<br>
-        A <b>HASH</b>
+        A <img src="SMALL/HASH.png" width="400px" height="171px">
       </h1>
-      <span class="span-header">
+      <span class="span-header bg2-2">
         Através da <b>Hash</b>, empresas usam da sua capilaridade para criarem experiências financeiras que realmente importam para seus fornecedores e clientes.
       </span>
-      <div class="investors">
+      <div class="investors bg2-3">
         <img src="./SMALL/canary.png" width="127px" height="58px"/>
         <span class="fancyE">&</span>  
         <img src="./SMALL/kaszek.png" width="127px" height="58px"/>
       </div>
-        <img src="./SMALL/we_are_hash.png" width="25px" height="25px" style="position: relative;left: 495px;top: -322px;"/>
     </div>
 
     <div class="right-box three-texts">
       <div>
-        <div>
+        <div class="box1-3" style="margin-top: 70px">
           <h3>
             Especialistas no mercado de payments
           </h3>
@@ -89,7 +88,7 @@
             Somos a única plataforma que permite que nossos clientes escolham diferentes fornecedores, customizem seus relatórios, automatizem suas gestão, gerenciem ativos e estejam aptos a escalar seu negócio de pagamentos.
           <span>
         </div>
-        <div>
+        <div class="box2-3">
           <h3>
             Hash Payment Platform
           </h3>
@@ -97,7 +96,7 @@
             Somos a única plataforma que permite que nossos clientes escolham diferentes fornecedores, customizem seus relatórios, automatizem suas gestão, gerenciem ativos e estejam aptos a escalar seu negócio de pagamentos.
           <span>
         </div>
-        <div>
+        <div class="box3-3" style="margin-top: 70px">
           <h3>
             Modularidade para escalar sua operação
           </h3>
@@ -173,7 +172,7 @@
             <img src="ILUSTRA/ICON_ILU.png" />
             <h3>
               BANKING
-            </h3>
+            </h3>:we
             <span>
               white label
             <span>
@@ -184,6 +183,7 @@
     
     <!--  ========================================== -->
 
+    <script src="smoothscroll.js"></script>
     <script src="main.js"></script>
 
     <div class="left-box bg-squares-4">
@@ -191,7 +191,6 @@
         Encaixe a <span class="span-h2 header-highlight">hash</span><br />
         em sua operação
       </h2>
-      <iframe class="pipefy-form" src='http://app.pipefy.com/public/form/Gp5ojRgJ?embedded=true' frameborder='0'></iframe>
     </div>
 
     <div class="right-box">

@@ -50,55 +50,80 @@ Promise.resolve()
   scrollTriggered()
 })
 
-Promise.resolve()
-.then(wait(100))
-.then(() => { document.querySelector('.bg1-1').style.opacity = 1 })
-.then(() => { document.querySelector('.bg1-1').style.transform = 'translate(20px, 0)' })
-.then(wait(100))
-.then(() => { document.querySelector('.bg1-2').style.opacity = 1 })
-.then(() => { document.querySelector('.bg1-2').style.transform = 'translate(20px, 0)' })
-.then(wait(100))
-.then(() => { document.querySelector('.bg1-3').style.opacity = 1 })
-.then(() => { document.querySelector('.bg1-3').style.transform = 'translate(20px, 0)' })
-
+var secondSquareShown = false
+var firstSquareShown = true
 window.onscroll = scrollTriggered
 
 var snapTimer = null
-var threeTextsShown = false
 
-function threeTextsTest (scroll) {
-  if (scroll > 700) {
-    threeTextsShown = true
-    Promise.resolve()
-      .then(wait(150))
-      .then(() => { document.querySelector('.box1-3').style.opacity = 1 })
-      .then(() => { document.querySelector('.box1-3').style.transform = 'translate(0, 20px)' })
-      .then(wait(150))
-      .then(() => { document.querySelector('.box2-3').style.opacity = 1 })
-      .then(() => { document.querySelector('.box2-3').style.transform = 'translate(0, 20px)' })
-      .then(wait(150))
-      .then(() => { document.querySelector('.box3-3').style.opacity = 1 })
-      .then(() => { document.querySelector('.box3-3').style.transform = 'translate(0, 20px)' })
+function firstSquareTest (scroll, opacity, translateY) {
+  firstSquareShown = !!opacity
+  Promise.resolve()
+    .then(wait(100))
+    .then(() => { document.querySelector('.bg1-1').style.opacity = opacity })
+    .then(() => { document.querySelector('.bg1-1').style.transform = `translate(${translateY}px, 0)` })
+    .then(wait(100))
+    .then(() => { document.querySelector('.bg1-2').style.opacity = opacity })
+    .then(() => { document.querySelector('.bg1-2').style.transform = `translate(${translateY}px, 0)` })
+    .then(wait(100))
+    .then(() => { document.querySelector('.bg1-3').style.opacity = opacity })
+    .then(() => { document.querySelector('.bg1-3').style.transform = `translate(${translateY}px, 0)` })
+}
+firstSquareTest(0, 1, 20)
 
-    Promise.resolve()
-      .then(wait(100))
-      .then(() => { document.querySelector('.bg2-1').style.opacity = 1 })
-      .then(() => { document.querySelector('.bg2-1').style.transform = 'translate(20px, 0)' })
-      .then(wait(100))
-      .then(() => { document.querySelector('.bg2-2').style.opacity = 1 })
-      .then(() => { document.querySelector('.bg2-2').style.transform = 'translate(20px, 0)' })
-      .then(wait(100))
-      .then(() => { document.querySelector('.bg2-3').style.opacity = 1 })
-      .then(() => { document.querySelector('.bg2-3').style.transform = 'translate(20px, 0)' })
-  }
+function secondSquareTest (scroll, opacity, translateY) {
+  secondSquareShown = !!opacity
+  Promise.resolve()
+    .then(wait(150))
+    .then(() => { document.querySelector('.box1-3').style.opacity = opacity })
+    .then(() => { document.querySelector('.box1-3').style.transform = `translate(0, ${translateY}px)` })
+    .then(wait(150))
+    .then(() => { document.querySelector('.box2-3').style.opacity = opacity })
+    .then(() => { document.querySelector('.box2-3').style.transform = `translate(0, ${translateY}px)` })
+    .then(wait(150))
+    .then(() => { document.querySelector('.box3-3').style.opacity = opacity })
+    .then(() => { document.querySelector('.box3-3').style.transform = `translate(0, ${translateY}px)` })
+
+  Promise.resolve()
+    .then(wait(100))
+    .then(() => { document.querySelector('.bg2-1').style.opacity = 1 })
+    .then(() => { document.querySelector('.bg2-1').style.transform = `translate(20px, 0)` })
+    .then(wait(100))
+    .then(() => { document.querySelector('.bg2-2').style.opacity = 1 })
+    .then(() => { document.querySelector('.bg2-2').style.transform = `translate(20px, 0)` })
+    .then(wait(100))
+    .then(() => { document.querySelector('.bg2-3').style.opacity = 1 })
+    .then(() => { document.querySelector('.bg2-3').style.transform = `translate(20px, 0)` })
 }
 
 function scrollTriggered () {
   const scroll = window.scrollY
 
-  if (!threeTextsShown) {
-    threeTextsTest(scroll)
+  // if (
+  //   scroll < 700
+  // ) {
+  if (!firstSquareShown) {
+    firstSquareTest(scroll, 1, 20)
   }
+  // } else {
+  //   if (firstSquareShown) {
+  //     firstSquareTest(scroll, 0, 0)
+  //   }
+  // }
+
+  if (
+    scroll > scrollSteps[1] - 100 &&
+    scroll < scrollSteps[1] + 100
+  ) {
+    if (!secondSquareShown) {
+      secondSquareTest(scroll, 1, 20)
+    }
+  } else {
+    if (secondSquareShown) {
+      secondSquareTest(scroll, 0, 0)
+    }
+  }
+
 
   ilustras.fourthBig.style.transition = 'none'
   ilustras.thirdBig.style.transition = 'none'
@@ -154,12 +179,12 @@ function thirdAnimation (t1, t2, t3, t4) {
   }
   if (t2 < 1) {
     ilustras.thirdBig.style.transform = `translate(0, ${
-      lerp(250, 150, t2 - 0.2 * (1 - t2) + 0.15 * (t2))
+      lerp(250, 210, t2 - 0.01 * (1 - t2) + 0.4 * (t2))
     }px)`
     return
   }
   ilustras.thirdBig.style.transform = `translate(0, ${
-    lerp(150, -1500, t3)
+    lerp(210, -1500, t3)
   }px)`
 }
 
@@ -172,12 +197,12 @@ function fourthAnimation (t1, t2, t3, t4) {
   }
   if (t2 < 1) {
     ilustras.fourthBig.style.transform = `translate(0, ${
-      lerp(250, 150, t2 - 0.3 * (1 - t2) + 0.1 * (t2))
+      lerp(250, 210, t2 - 0.6 * (1 - t2) + 0.05 * (t2))
     }px)`
     return
   }
   ilustras.fourthBig.style.transform = `translate(0, ${
-    lerp(150, 40, t3)
+    lerp(210, 0, t3)
   }px)`
 }
 if (window.scrollY !== 0) {
@@ -200,7 +225,6 @@ window.addEventListener('scroll', () => {
 }, false)
 
 const frame = document.createElement('iframe')
-console.table(frame)
 frame.src = 'http://app.pipefy.com/public/form/Gp5ojRgJ?embedded=true'
 frame.frameBorder = 0
 frame.classList = 'pipefy-form' 

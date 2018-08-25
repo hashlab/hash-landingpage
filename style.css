@@ -241,31 +241,37 @@ header div img {
 .six-texts {
   flex-direction: column;
   justify-content: flex-start;
+  width: 50%;
 }
 .six-texts > div {
   margin-top: 30px;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
 .six-texts > div > div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 .six-texts > div > div > div {
-  width: 192px;
+  width: 100px;
   font-size: 14px;
   line-height: 1.21;
   color: #6f97aa;
   font-family: 'Noto Sans', sans-serif;
 }
-.six-texts > div > div > h3 {
+.six-texts > div > div > div > h3 {
   font-family: MilliardBold;
-  font-size: 26px;
   font-weight: bold;
   line-height: 1.08;
+  margin: 7px 0;
 }
+.six-texts > div > div > div > span {
+  font-style: italic;
+}
+
 
 .bg-squares-4 {
   background-image: url("./L4_WHITE.png");

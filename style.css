@@ -108,6 +108,7 @@ header div img {
   text-decoration: none;
   transition: all 100ms ease-out;
   cursor: pointer;
+  user-select: none;
 }
 .header-link:hover {
   opacity: 0.5;

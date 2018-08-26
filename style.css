@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html {
@@ -66,7 +65,7 @@ h2 {
 
 header {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   z-index: 1;
 }
 
@@ -122,6 +121,9 @@ header div img {
   word-wrap: normal;
   width: 200px;
   text-align: right;
+}
+.header-link.blue-color-only {
+  color: #c9ecff;
 }
 
 .container {
@@ -232,6 +234,15 @@ header div img {
 
 .bg-squares-3 {
   background-image: url("./L3_BLACK.png");
+  padding-left: 50px;
+}
+.bg-squares-3 > * {
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+.six-texts > div > div > div {
+  opacity: 0;
+  transition: all 0.2s ease-out;
 }
 .bg-squares-3 h2{
   margin-top: 277px;
@@ -270,6 +281,9 @@ header div img {
 }
 .six-texts > div > div > div > span {
   font-style: italic;
+}
+.six-texts > div > div > div > img {
+  opacity: 0;
 }
 
 
@@ -370,9 +384,12 @@ footer {
 
 .ilustra {
   position: fixed;
-  width: 605px;
-  height: 556px;
   transition: all 0.4s ease-out;
   transform: translate(0, -70px);
+  z-index: -1;
+}
+
+.tower {
+  position: fixed;
   z-index: -1;
 }

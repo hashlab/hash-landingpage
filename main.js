@@ -17,7 +17,7 @@ const scrollSteps = [
   850,
   1750,
   2650,
-  3050,
+  3000,
 ]
 
 const ilustras = {
@@ -36,24 +36,42 @@ const towers = [
   document.querySelector('.t6'),
 ]
 
-const towersInitialXY = towers.map(tower => {
-  return {
-    x: parseInt(
-      window
-        .getComputedStyle(tower)
-        .getPropertyValue('transform')
-        .split(',')[4]
-    ),
-    y: parseInt(
-      window
-        .getComputedStyle(tower)
-        .getPropertyValue('transform')
-        .split(',')[5]
-    ),
-  }
-})
+// const towersInitialXY = towers.map(tower => {
+//   return {
+//     x: parseInt(
+//       window
+//         .getComputedStyle(tower)
+//         .getPropertyValue('transform')
+//         .split(',')[4]
+//     ),
+//     y: parseInt(
+//       window
+//         .getComputedStyle(tower)
+//         .getPropertyValue('transform')
+//         .split(',')[5]
+//     ),
+//   }
+// })
 
-const startY = -50
+const towersInitialXY = [
+  { x: -197, y: -74, },
+  { x: -115, y: -115, },
+  { x: -31, y: -158, },
+  { x: 4, y: 55, },
+  { x: 90, y: 2, },
+  { x: 171, y: -46, },
+]
+const towerMiddleXY = [
+  { x: -220, y: -149, },
+  { x: -222, y: -324, },
+  { x: 0, y: -318, },
+  { x: 0, y: -137, },
+  { x: 220, y: -137, },
+  { x: 220, y: -320, },
+]
+
+const startY = 55
+const secondY = 265
 
 Promise.resolve()
 .then(wait(500))
@@ -104,17 +122,17 @@ firstSquareTest(0, 1, 20)
 
 function secondSquareTest (scroll, opacity, translateY) {
   secondSquareShown = !!opacity
+
   Promise.resolve()
-    .then(wait(150))
+    .then(wait(150 * opacity))
     .then(() => { document.querySelector('.box1-3').style.opacity = opacity })
     .then(() => { document.querySelector('.box1-3').style.transform = `translate(0, ${translateY}px)` })
-    .then(wait(150))
+    .then(wait(150 * opacity))
     .then(() => { document.querySelector('.box2-3').style.opacity = opacity })
     .then(() => { document.querySelector('.box2-3').style.transform = `translate(0, ${translateY}px)` })
-    .then(wait(150))
+    .then(wait(150 * opacity))
     .then(() => { document.querySelector('.box3-3').style.opacity = opacity })
     .then(() => { document.querySelector('.box3-3').style.transform = `translate(0, ${translateY}px)` })
-
   Promise.resolve()
     .then(wait(100))
     .then(() => { document.querySelector('.bg2-1').style.opacity = 1 })
@@ -166,8 +184,8 @@ function scrollTriggered () {
   }
 
   if (
-    scroll > scrollSteps[1] - 100 &&
-    scroll < scrollSteps[1] + 100
+    scroll > scrollSteps[1] - 200 &&
+    scroll < scrollSteps[1] + 200
   ) {
     if (!secondSquareShown) {
       secondSquareTest(scroll, 1, 20)
@@ -178,8 +196,8 @@ function scrollTriggered () {
     }
   }
   if (
-    scroll > scrollSteps[2] - 100 &&
-    scroll < scrollSteps[2] + 100
+    scroll > scrollSteps[2] - 200 &&
+    scroll < scrollSteps[2] + 200
   ) {
     if (!thirdSquareShown) {
       thirdSquareTest(scroll, 1, 20)
@@ -253,57 +271,30 @@ function firstAnimation (t1, t2, t3, t4) {
 function secondAnimation (t1, t2, t3, t4) {
   if (t1 < 1) {
     ilustras.secondBig.style.transform = `translate(0, ${
-      lerp(startY, 250, t1 - 0.3 * (1 - t1) + 0.1 * (t1))
+      lerp(startY, secondY, t1 - 0.3 * (1 - t1) + 0.1 * (t1))
     }px)`
     return
   }
   ilustras.secondBig.style.transform = `translate(0, ${
-    lerp(250, -1000, t2)
+    lerp(secondY, -1500, t2)
   }px)`
 }
 
-function thirdAnimation (t1, t2, t3, t4) {
-
-  if (t1 < 1) {
-    ilustras.thirdBig.style.transform = `translate(0, ${
-      lerp(startY, 250, t1 - 0.2 * (1 - t1) + 0.15 * (t1))
-    }px)`
-    return
-  }
-  if (t2 < 1) {
-    ilustras.thirdBig.style.transform = `translate(0, ${
-      lerp(250, 180, t2 - 0.2 * (1 - t2) + 0.5 * (t2))
-    }px)`
-    return
-  }
-  ilustras.thirdBig.style.transform = `translate(0, ${
-    lerp(180, -1000, t3)
-  }px)`
-}
-
-const towerMiddleXY = [
-  { x: -246, y: -324, },
-  { x: -246, y: -125, },
-  { x: -24, y: -125, },
-  { x: -24, y: -324, },
-  { x: 197, y: -324, },
-  { x: 197, y: -125, },
-]
 function animateTowers (t1, t2, t3, t4) {
   towers.forEach((tower, index) => {
     const { x, y } = towersInitialXY[index]
     const { x: x2, y: y2 } = towerMiddleXY[index]
     if (t1 <= 1) {
       tower.style.transform = `translate(${x}px, ${
-        lerp(y + 10, 318 + y, t1 - 0.2 * (1 - t1) + 0.15 * (t1))
+        lerp(y + 10, 250 + y, t1 - 0.2 * (1 - t1) + 0.15 * (t1))
       }px)`
       return
     }
     if (t2 <= 1) {
       tower.style.transform = `translate(${
-        lerp(x, x2, t2)
+        lerp(x, x2, t2 - ((1-t2) * 0.5))
       }px, ${
-        lerp(318 + y, y2, t2)
+        lerp(250 + y, y2, t2 - ((1-t2) * 0.13))
       }px)`
       return
     }
@@ -313,21 +304,39 @@ function animateTowers (t1, t2, t3, t4) {
   })
 }
 
+function thirdAnimation (t1, t2, t3, t4) {
+  if (t1 < 1) {
+    ilustras.thirdBig.style.transform = `translate(0, ${
+      lerp(startY, secondY, t1 - 0.2 * (1 - t1) + 0.15 * (t1))
+    }px)`
+    return
+  }
+  if (t2 < 1) {
+    ilustras.thirdBig.style.transform = `translate(0, ${
+      lerp(secondY, 250, t2 - 0.2 * (1 - t2) + 0.5 * (t2))
+    }px)`
+    return
+  }
+  ilustras.thirdBig.style.transform = `translate(0, ${
+    lerp(250, -1000, t3)
+  }px)`
+}
+
 function fourthAnimation (t1, t2, t3, t4) {
   if (t1 < 1) {
     ilustras.fourthBig.style.transform = `translate(0, ${
-      lerp(startY, 250, t1 - 0.1 * (1 - t1) + 0.2 * (t1))
+      lerp(startY, secondY, t1 - 0.1 * (1 - t1) + 0.2 * (t1))
     }px)`
     return
   }
   if (t2 < 1) {
     ilustras.fourthBig.style.transform = `translate(0, ${
-      lerp(250, 180, t2 - 0.3 * (1 - t2) + 0.05 * (t2))
+      lerp(secondY, 250, t2 - 0.3 * (1 - t2) + 0.05 * (t2))
     }px)`
     return
   }
   ilustras.fourthBig.style.transform = `translate(0, ${
-    lerp(180, -100, t3)
+    lerp(250, -200, t3)
   }px)`
 }
 if (window.scrollY !== 0) {
@@ -338,10 +347,12 @@ var scrollingTimer;
 window.addEventListener('scroll', () => {
 	window.clearTimeout( scrollingTimer )
 	scrollingTimer = setTimeout(() => {
-    const snap = scrollSteps.find(s =>
+    const snap = scrollSteps.concat().reverse().find(s =>
+      scrollY > 10 &&
       s - 150 < scrollY &&
       s + 150 > scrollY &&
-      s < 2650
+      s <= 2650 &&
+      scrollY <= 2650
     )
     if (snap) {
       window.scroll({ top: snap, behavior: 'smooth'})

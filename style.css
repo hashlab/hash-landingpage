@@ -84,6 +84,7 @@ header div img {
 .header-1 {
   width: 578px;
   margin-bottom: 30px;
+  margin-top: 112px;
 }
 
 .header-highlight {
@@ -122,6 +123,7 @@ header div img {
   word-wrap: normal;
   width: 200px;
   text-align: right;
+  padding-right: 30px;
 }
 .header-link.blue-color-only {
   color: #c9ecff;
@@ -131,15 +133,23 @@ header div img {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 1255px) {
+  .container {
+    height: 3705px;
+  }
+}
 
 .left-box {
   /* border: solid 1px red; */
-	width: 798px;
+  width: 50vw;
+  max-width: 798px;
+  min-width: 700px;
   height: 900px;
   display: flex;
   flex-direction: column;
-  padding: 70px;
+  padding: 50px;
   background-repeat: no-repeat;
+  background-position: top right;
 }
 .span-header {
   width: 507px;
@@ -152,23 +162,31 @@ header div img {
 
 .right-box {
   /* border: solid 1px red; */
-  width: calc(100% - 798px);
+  width: calc(50vw - 100px);
   height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-@media (max-width: 1300px) {
+@media (max-width: 1255px) {
+  .left-box {
+    opacity: 0.9;
+  }
   .right-box {
-    display: none;
+    width: 100vw;
   }
 }
 
+
+@media (max-width: 1255px) {
+  .bg-squares-1 {
+    position: absolute;
+  }
+}
 .bg-squares-1 {
   background-image: url("./L1_BLACK.png");
   color: #7e7e7e;
-  padding-left: 50px;
+  padding-left: 3%;
 }
 .bg-squares-1 > * {
   opacity: 0;
@@ -193,14 +211,21 @@ header div img {
 .button.blue {
   color: #c9ecff;
   border: solid 1px #c9ecff;
-  margin-left: 150px;
+  margin-left: 40px;
 }
 .blue:hover {
   opacity: 0.5;
 }
+@media (max-width: 1255px) {
+  .bg-squares-2 {
+    position: absolute;
+    top: 900px;
+  }
+}
 .bg-squares-2 {
   background-image: url("./L2_BLUE.png");
-  padding-left: 50px;
+  padding-left: 3%;
+  padding-top: 90px;
 }
 .bg-squares-2 > * {
   opacity: 0;
@@ -213,10 +238,15 @@ header div img {
 .three-texts {
   align-items: flex-start;
 }
+@media (max-width: 1255px) {
+  .three-texts {
+    display: none;
+  }
+}
 .three-texts > div {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .three-texts > div > div {
@@ -236,11 +266,21 @@ header div img {
 .box1-3, .box2-3, .box3-3 {
   transition: all 0.3s ease-out;
   opacity: 0;
+  margin: 0 10px;
 }
 
+.box3-3 {
+}
+
+@media (max-width: 1255px) {
+  .bg-squares-3 {
+    position: absolute;
+    top: 1800px;
+  }
+}
 .bg-squares-3 {
   background-image: url("./L3_BLACK.png");
-  padding-left: 50px;
+  padding-left: 3%;
 }
 .bg-squares-3 > * {
   opacity: 0;
@@ -251,13 +291,18 @@ header div img {
   transition: all 0.2s ease-out;
 }
 .bg-squares-3 h2{
-  margin-top: 277px;
+  margin-top: 200px;
   margin-bottom: 30px;
 }
 
 .six-texts {
   flex-direction: column;
   justify-content: flex-start;
+}
+@media (max-width: 1255px) {
+  .six-texts {
+    display: none;
+  }
 }
 .six-texts > div {
   margin-top: 30px;
@@ -273,26 +318,40 @@ header div img {
 }
 .six-texts > div > div > div {
   margin: 0 60px;
-  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
   font-size: 14px;
   line-height: 1.21;
   color: #6f97aa;
   font-family: 'Noto Sans', sans-serif;
+  text-align: center;
 }
 .six-texts > div > div > div > h3 {
   font-family: MilliardBold;
   font-weight: bold;
   line-height: 1.08;
-  margin: 7px 0;
+  margin-top: 7px;
+  margin-bottom: 2px;
 }
 .six-texts > div > div > div > span {
   font-style: italic;
+  opacity: 0.7;
 }
 .six-texts > div > div > div > img {
   opacity: 0;
 }
+.dashes {
+  background-color: #8dabba40;
+  font-size: 5px;
+  color: transparent;
+}
 
-
+@media (max-width: 1255px) {
+  .bg-squares-4 {
+    position: absolute;
+    top: 2700px;
+  }
+}
 .bg-squares-4 {
   background-image: url("./L4_WHITE.png");
   height: 1005px;
@@ -334,7 +393,7 @@ header div img {
 }
 
 .investors {
-  margin-top: 30px;
+  margin-top: 80px;
   height: 58px;
   display: flex;
   align-items: center;
@@ -354,7 +413,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 95px;
+  height: 55px;
 }
 
 .info > span {
@@ -377,15 +436,16 @@ footer {
   height: 95px;
 }
 
-.media > div > img {
+.media > a > img {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.media > div {
+.media > a {
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
+  text-decoration: none;
+  color: #b9b9b9;
 }
 
 .ilustra {
@@ -398,4 +458,13 @@ footer {
 .tower {
   position: fixed;
   z-index: -1;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -2;
 }

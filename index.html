@@ -32,16 +32,16 @@
   <header>
     <div>
       <img src="SMALL/logo_menu.png" width="112px" height="33px" style="cursor:pointer;" onclick="window.scroll({ top: 0, behavior: 'smooth'})"/>
-      <a class="header-link home" onclick="window.scroll({ top: 0, behavior: 'smooth'})" style="margin-left: 72px">
+      <a class="header-link home" onclick="window.scroll({ top: 0 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})" style="margin-left: 72px">
         início
       </a>
-      <a class="header-link about" onclick="window.scroll({ top: 850, behavior: 'smooth'})">
+      <a class="header-link about" onclick="window.scroll({ top: 850 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})">
         sobre
       </a>
-      <a class="header-link specs" onclick="window.scroll({ top: 1750, behavior: 'smooth'})">
+      <a class="header-link specs" onclick="window.scroll({ top: 1750 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})">
         info
       </a>
-      <a class="header-link contact" onclick="window.scroll({ top: 2650, behavior: 'smooth'})">
+      <a class="header-link contact" onclick="window.scroll({ top: 2650 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})">
         contato
       </a>
       <a class="header-link blue" href="https://hashlab.workable.com/" target="_blank">
@@ -113,7 +113,7 @@
             Ajudamos nossos clientes a mapear, desenvolver e implementar soluções financeiras que viabilizam seu modelo de negócios ou que adicionam novas linhas de receita.
           <span>
         </div>
-        <div class="box2-3">
+        <div class="box2-3"style="margin-top: -10px">
           <h3>
             Hash<br />
             Payment<br />

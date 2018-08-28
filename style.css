@@ -135,8 +135,9 @@ header div img {
 .container {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .container {
     height: 3705px;
   }
@@ -144,7 +145,6 @@ header div img {
 
 .left-box {
   /* border: solid 1px red; */
-  width: 50vw;
   max-width: 798px;
   min-width: 798px;
   height: 900px;
@@ -165,13 +165,13 @@ header div img {
 
 .right-box {
   /* border: solid 1px red; */
-  width: calc(50vw - 100px);
+  width: calc(100% - 800px);
   height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .left-box {
     opacity: 0.9;
   }
@@ -181,7 +181,7 @@ header div img {
 }
 
 
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .bg-squares-1 {
     position: absolute;
   }
@@ -219,7 +219,7 @@ header div img {
 .blue:hover {
   opacity: 0.5;
 }
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .bg-squares-2 {
     position: absolute;
     top: 900px;
@@ -241,7 +241,7 @@ header div img {
 .three-texts {
   align-items: flex-start;
 }
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .three-texts {
     display: none;
   }
@@ -276,7 +276,7 @@ header div img {
 .box3-3 {
 }
 
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .bg-squares-3 {
     position: absolute;
     top: 1800px;
@@ -303,7 +303,7 @@ header div img {
   flex-direction: column;
   justify-content: flex-start;
 }
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .six-texts {
     display: none;
   }
@@ -350,7 +350,7 @@ header div img {
   color: transparent;
 }
 
-@media (max-width: 1255px) {
+@media (max-width: 1070px) {
   .bg-squares-4 {
     position: absolute;
     top: 2700px;

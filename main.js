@@ -12,7 +12,14 @@ function lerp(v0, v1, t) {
 
 const wait = ms => () => new Promise(resolve => setTimeout(resolve, ms))
 
-const scrollSteps = [
+var scrollSteps = [
+  0,
+  850,
+  1750,
+  2650,
+  3000,
+]
+const initialScrollSteps = [
   0,
   850,
   1750,
@@ -71,7 +78,7 @@ const towerMiddleXY = [
 ]
 
 const startY = 55
-const secondY = 265
+const secondY = 290
 
 Promise.resolve()
 .then(wait(500))
@@ -356,15 +363,14 @@ if (window.scrollY !== 0) {
 var scrollingTimer;
 window.addEventListener('scroll', () => {
   const scroll = window.scrollY
-  if (document.body.style.zoom !== "1") { return }
 	window.clearTimeout( scrollingTimer )
 	scrollingTimer = setTimeout(() => {
     const snap = scrollSteps.concat().reverse().find(s =>
       scroll > 10 &&
-      s - 100 < scroll &&
-      s + 100 > scroll &&
-      s <= 2650 &&
-      scroll <= 2650
+      s - 150 < scroll &&
+      s + 150 > scroll &&
+      s < 2650 * parseFloat(document.body.style.zoom) &&
+      scroll < 2650 * parseFloat(document.body.style.zoom)
     )
     if (snap) {
       window.scroll({ top: snap, behavior: 'smooth'})
@@ -378,15 +384,20 @@ frame.frameBorder = 0
 frame.classList = 'pipefy-form' 
 document.querySelector('.bg-squares-4').appendChild(frame)
 
-}
 
 const checkSize = e => {
   if (window.innerWidth < 1450) {
-    document.body.style.zoom = 0.9
+    document.body.style.zoom = 0.8
+    scrollSteps = initialScrollSteps.map(s => s * parseFloat(document.body.style.zoom))
     return
   }
   document.body.style.zoom = 1
+  scrollSteps = initialScrollSteps
+  scrollTriggered()
 }
 
 window.onresize = checkSize
 checkSize()
+
+
+}

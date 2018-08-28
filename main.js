@@ -154,7 +154,7 @@ function secondSquareTestTexts (scroll, opacity, translateY) {
     .then(() => { document.querySelector('.box3-3').style.transform = `translate(0, ${translateY}px)` })
 }
 
-function thirdSquareTest (scroll, opacity, translateY) {
+function thirdSquareTestTexts (scroll, opacity, translateY) {
   thirdSquareShown = !!opacity
   Promise.resolve()
     .then(wait(75))
@@ -176,6 +176,9 @@ function thirdSquareTest (scroll, opacity, translateY) {
     .then(() => { document.querySelector('.box6-6').style.opacity = opacity })
     .then(() => { document.querySelector('.box6-6').style.transform = `translate(0, ${opacity * 10}px)` })
 
+}
+
+function thirdSquareTest (scroll, opacity, translateY) {
   Promise.resolve()
     .then(wait(100))
     .then(() => { document.querySelector('.bg3-1').style.opacity = 1 })
@@ -193,8 +196,8 @@ function scrollTriggered () {
   }
 
   if (
-    scroll > scrollSteps[1] - 200 &&
-    scroll < scrollSteps[1] + 200
+    scroll > scrollSteps[1] - 500 &&
+    scroll < scrollSteps[1] + 500
   ) {
     if (!secondSquareShown) {
       secondSquareTest(scroll, 1, 20)
@@ -213,8 +216,8 @@ function scrollTriggered () {
     secondSquareTestTexts(scroll, 0, 0)
   }
   if (
-    scroll > scrollSteps[2] - 85 &&
-    scroll < scrollSteps[2] + 85
+    scroll > scrollSteps[2] - 500 &&
+    scroll < scrollSteps[2] + 500
   ) {
     if (!thirdSquareShown) {
       thirdSquareTest(scroll, 1, 20)
@@ -222,6 +225,18 @@ function scrollTriggered () {
   } else {
     if (thirdSquareShown) {
       thirdSquareTest(scroll, 0, 0)
+    }
+  }
+  if (
+    scroll > scrollSteps[2] - 85 &&
+    scroll < scrollSteps[2] + 85
+  ) {
+    if (!thirdSquareShown) {
+      thirdSquareTestTexts(scroll, 1, 20)
+    }
+  } else {
+    if (thirdSquareShown) {
+      thirdSquareTestTexts(scroll, 0, 0)
     }
   }
 
@@ -367,8 +382,8 @@ window.addEventListener('scroll', () => {
 	scrollingTimer = setTimeout(() => {
     const snap = scrollSteps.concat().reverse().find(s =>
       scroll > 10 &&
-      s - 150 < scroll &&
-      s + 150 > scroll &&
+      s - 250 < scroll &&
+      s + 250 > scroll &&
       s <= 2650 * parseFloat(document.body.style.zoom) &&
       scroll <= 2650 * parseFloat(document.body.style.zoom)
     )

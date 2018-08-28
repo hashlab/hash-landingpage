@@ -125,6 +125,9 @@ header div img {
   text-align: right;
   padding-right: 30px;
 }
+.header-link.blue img {
+  margin-bottom: 1px;
+}
 .header-link.blue-color-only {
   color: #c9ecff;
 }

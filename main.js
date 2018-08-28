@@ -355,14 +355,16 @@ if (window.scrollY !== 0) {
 
 var scrollingTimer;
 window.addEventListener('scroll', () => {
+  const scroll = window.scrollY
+  if (document.body.style.zoom !== "1") { return }
 	window.clearTimeout( scrollingTimer )
 	scrollingTimer = setTimeout(() => {
     const snap = scrollSteps.concat().reverse().find(s =>
-      scrollY > 10 &&
-      s - 100 < scrollY &&
-      s + 100 > scrollY &&
+      scroll > 10 &&
+      s - 100 < scroll &&
+      s + 100 > scroll &&
       s <= 2650 &&
-      scrollY <= 2650
+      scroll <= 2650
     )
     if (snap) {
       window.scroll({ top: snap, behavior: 'smooth'})
@@ -377,3 +379,14 @@ frame.classList = 'pipefy-form'
 document.querySelector('.bg-squares-4').appendChild(frame)
 
 }
+
+const checkSize = e => {
+  if (window.innerWidth < 1450) {
+    document.body.style.zoom = 0.9
+    return
+  }
+  document.body.style.zoom = 1
+}
+
+window.onresize = checkSize
+checkSize()

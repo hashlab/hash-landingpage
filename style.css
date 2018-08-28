@@ -146,7 +146,7 @@ header div img {
   /* border: solid 1px red; */
   width: 50vw;
   max-width: 798px;
-  min-width: 700px;
+  min-width: 798px;
   height: 900px;
   display: flex;
   flex-direction: column;

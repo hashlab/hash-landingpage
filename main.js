@@ -208,14 +208,6 @@ function scrollTriggered () {
     }
   }
   if (
-    scroll > scrollSteps[1] - 70 &&
-    scroll < scrollSteps[1] + 70
-  ) {
-    secondSquareTestTexts(scroll, 1, 20)
-  } else {
-    secondSquareTestTexts(scroll, 0, 0)
-  }
-  if (
     scroll > scrollSteps[2] - 500 &&
     scroll < scrollSteps[2] + 500
   ) {
@@ -414,5 +406,15 @@ const checkSize = e => {
 window.onresize = checkSize
 checkSize()
 
+setInterval(() => {
+  if (
+    scrollY > scrollSteps[1] - 70 &&
+    scrollY < scrollSteps[1] + 70
+  ) {
+    secondSquareTestTexts(scrollY, 1, 20)
+  } else {
+    secondSquareTestTexts(scrollY, 0, 0)
+  }
+}, 200)
 
 }

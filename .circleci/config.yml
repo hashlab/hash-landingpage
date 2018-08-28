@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # Install aws cli
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      # Deploy branch to S3
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync . s3://www.hash.com.br/ --exclude ".git/*" --exclude ".circleci/*" --delete
+workflows:
+  version: 2
+  deploy_to_s3:
+    jobs:
+      - hold:
+          type: approval
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - hold
+          filters:
+            branches:
+              only: master

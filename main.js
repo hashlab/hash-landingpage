@@ -369,8 +369,8 @@ window.addEventListener('scroll', () => {
       scroll > 10 &&
       s - 150 < scroll &&
       s + 150 > scroll &&
-      s < 2650 * parseFloat(document.body.style.zoom) &&
-      scroll < 2650 * parseFloat(document.body.style.zoom)
+      s <= 2650 * parseFloat(document.body.style.zoom) &&
+      scroll <= 2650 * parseFloat(document.body.style.zoom)
     )
     if (snap) {
       window.scroll({ top: snap, behavior: 'smooth'})

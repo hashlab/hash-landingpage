@@ -407,6 +407,7 @@ const checkSize = e => {
   if (window.innerWidth < 1450) {
     document.body.style.zoom = 0.8
     scrollSteps = initialScrollSteps.map(s => s * parseFloat(document.body.style.zoom))
+    scrollTriggered()
     return
   }
   document.body.style.zoom = 1

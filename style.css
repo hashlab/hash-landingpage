@@ -508,9 +508,12 @@ footer {
     align-items: center;
     font-size: 4vw;
     width: auto;
+    flex-direction: row;
   }
   .header-link.blue img {
-    margin-bottom: 11px;
+    height: 3vw;
+    width: auto;
+    margin-top: 0;
   }
 
   header div  img {
@@ -595,6 +598,10 @@ footer {
     font-size: 3vw;
     margin-top: 3vw;
   }
+  .left-box.three-texts {
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+  }
   .left-box.three-texts.mobile div {
     flex-direction: column;
   }  
@@ -609,13 +616,13 @@ footer {
     flex-wrap: nowrap;
     font-size: 6vw;
     flex-direction: row;
-    margin-top: 3vw;
+    margin-top: 2vw;
     margin-bottom: 1vw;
   }
   .left-box.three-texts.mobile div div div h3 {
     margin-top: 1vw;
     margin-left: 2vw;
-    margin-bottom: 0;
+    margin-bottom: 2vw;
     font-size: 6vw;
     width: 70%;
     width: 100%;
@@ -642,6 +649,10 @@ footer {
   }
   .bg-squares-3 h2 .header-highlight {
     font-size: 9vw;
+  }
+  .six-texts {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
   }
   .six-texts > div {
     margin-top: 3vw;
@@ -688,7 +699,7 @@ footer {
   .bg-squares-4 h2 {
     margin-left: 5vw;
     font-size: 10vw;
-    margin-top: 7vw;
+    margin-top: 10vw;
   }
   .bg-squares-4 h2 .header-highlight {
     font-size: 10vw;
@@ -705,7 +716,9 @@ footer {
     flex-direction: column;
   }
   footer > img {
-    margin-top: 10px;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+    margin-left: 0px;
     width: 20vw;
     height: auto;
   }
@@ -715,14 +728,16 @@ footer {
     justify-content: flex-start;
     width: 90%;
     height: auto;
+    text-align: center;
+    margin-left: 0;
   }
   .info > * {
     margin-top: 2vw;
     margin-bottom: 2vw;
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
   .info > span {
-    font-size: 4vw;
+    font-size: 5vw;
     line-height: 4vw;
   }
   .info > *:last-child {
@@ -730,6 +745,7 @@ footer {
     font-size: 3vw;
   }
   .media {
+    margin-top: 2vw;
     position: static;
     width: 90%;
     height: auto;
@@ -739,11 +755,12 @@ footer {
     display: flex;
     align-items: flex-end;
     font-size: 5vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
   }
   .media img {
     width: 5vw;
     height: auto;
+    margin-top: 0;
   }
 }

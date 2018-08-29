@@ -441,9 +441,17 @@ footer {
 
 
 
+  .hide-big {
+    display: none;
+  }
 
 
 @media (max-width: 1070px) {
+  * {
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
   .left-box {
     opacity: 1;
     opacity: 1;
@@ -456,61 +464,66 @@ footer {
     flex-direction: column;
     padding-left: 0px;
     padding-top: 0px;
-    padding: 10px;
+    padding: 3vw;
   }
   .left-box > * {
     opacity: 1;
     max-width: none;
-    min-width: none;
+    min-width: 0px;
     width: auto;
     height: auto;
   }
   .left-box > * > * {
     opacity: 1;
     max-width: none;
-    min-width: none;
+    min-width: 0px;
     width: auto;
     height: auto;
   }
   .left-box > * > * > * {
     opacity: 1;
     max-width: none;
-    min-width: none;
+    min-width: 0px;
     width: auto;
     height: auto;
   }
   .left-box > * > * > * > * {
     opacity: 1;
     max-width: none;
-    min-width: none;
+    min-width: 0px;
     width: auto;
     height: auto;
   }
   .hide-small {
     display: none;
   }
-  .hide-big {
-    display: inline-block;
-  }
 
 
   .header-link {
-    font-size: 14px;
     display: none;
   }
   .header-link.blue {
     display: flex;
     align-items: center;
+    font-size: 14px;
   }
   .header-link.blue img {
     margin-bottom: 11px;
   }
 
-  header div img {
+  header div  img {
     margin-left: 20px;
     margin-right: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  header div > img {
+    margin-left: 20px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 20vw;
+    height: auto;
   }
   .home {
     margin-left: 10px;
@@ -520,40 +533,39 @@ footer {
     display: flex;
     flex-direction: column;
   }  
-  .six-texts {
+  .right-box .six-texts {
     display: none;
-    opacity: 1;
   }  
-  .three-texts {
+  .right-box .three-texts {
     display: none;
-    opacity: 1;
   }  
+  .box1-3, .box2-3, .box3-3 {
+    margin: 0px;
+  }
   .bg-squares-1 {
     background-color: #2c2c2c;
   }
   .bg-squares-1 h2 {
-    font-size: 9vw;
+    font-size: 10vw;
   }
   .bg-squares-1 .header-1 {
-    width: auto;
-    margin-bottom: 20px;
-    margin-top: 80px;
+    margin-top: calc(40px + 3vw);
   }
   .bg-squares-1 .header-1 .header-highlight {
-    font-size: 9vw;
+    font-size: 10vw;
   }
   .bg-squares-1 .button {
     display: none;
   }
   .bg-squares-1 .span-header {
     font-size: 4vw;
-    margin-top: 30px;
+    margin-top: 3vw;
   }
   .bg-squares-2 {
     background-color: #c9ecff;
   }  
   .bg-squares-2 h1 {
-    font-size: 14vw;
+    font-size: 18vw;
     margin-top: 7vw;
   }
   .bg-squares-2 img {
@@ -561,38 +573,47 @@ footer {
   }  
   .bg-squares-2 .span-header {
     font-size: 3vw;
-    margin-top: 30px;
+    margin-top: 3vw;
   }
   .bg-squares-2 .investors {
     position: static;
-    margin-top: 10px;
+    margin-top: 2vw;
     margin-bottom: 2vw;
   }
   .bg-squares-2 .span-header span {
-    color: #90b7cb;
-    font-size: 2vw;
+    font-size: 3vw;
+    margin-top: 3vw;
   }
   .bg-squares-3 {
     background-color: #2c2c2c;
   }
   .bg-squares-3 h2 {
     font-size: 9vw;
-    margin-top: 30px;
+    margin-top: 3vw;
   }
   .bg-squares-3 .span-header {
     font-size: 3vw;
-    margin-bottom: 30px;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
   }
   .bg-squares-3 h2 .header-highlight {
     font-size: 9vw;
   }
   .bg-squares-4 {
-    padding-top: 50px;
     background-color: white;
+  }
+  .bg-squares-4 h2 {
+    margin-left: 0px;
+    font-size: 10vw;
+    margin-top: 3vw;
+  }
+  .bg-squares-4 h2 .header-highlight {
+    font-size: 10vw;
   }
   .pipefy-form {
     width: 100%;
     height: 800px;
+    padding: 0px;
   }
   .right-box {
     display: none;

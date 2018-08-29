@@ -371,6 +371,9 @@ if (window.scrollY !== 0) {
 
 var scrollingTimer;
 window.addEventListener('scroll', () => {
+  if (window.innerWidth < 1070) {
+    return
+  }
   const scroll = window.scrollY
 	window.clearTimeout( scrollingTimer )
 	scrollingTimer = setTimeout(() => {

@@ -426,10 +426,17 @@ footer {
 
 
 
+.hide-big {
+  display: none;
+}
 
 
 
 
+.bg-squares-2 .span-header span {
+  color: #90b7cb;
+  font-size: 15px;
+}
 
 
 
@@ -449,7 +456,7 @@ footer {
     flex-direction: column;
     padding-left: 0px;
     padding-top: 0px;
-    padding: 20px;
+    padding: 10px;
   }
   .left-box > * {
     opacity: 1;
@@ -479,19 +486,31 @@ footer {
     width: auto;
     height: auto;
   }
-
+  .hide-small {
+    display: none;
+  }
+  .hide-big {
+    display: inline-block;
+  }
 
 
   .header-link {
     font-size: 14px;
-  }
-
-  .header-link.blue {
     display: none;
   }
+  .header-link.blue {
+    display: flex;
+    align-items: center;
+  }
+  .header-link.blue img {
+    margin-bottom: 11px;
+  }
+
   header div img {
     margin-left: 20px;
     margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .home {
     margin-left: 10px;
@@ -521,7 +540,7 @@ footer {
     margin-top: 80px;
   }
   .bg-squares-1 .header-1 .header-highlight {
-    font-size: 10vw;
+    font-size: 9vw;
   }
   .bg-squares-1 .button {
     display: none;
@@ -534,16 +553,41 @@ footer {
     background-color: #c9ecff;
   }  
   .bg-squares-2 h1 {
-    font-size: 12vw;
-    margin-top: 20px;
+    font-size: 14vw;
+    margin-top: 7vw;
   }
   .bg-squares-2 img {
-    height: 12vw;
+    height: 11.5vw;
   }  
+  .bg-squares-2 .span-header {
+    font-size: 3vw;
+    margin-top: 30px;
+  }
+  .bg-squares-2 .investors {
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 2vw;
+  }
+  .bg-squares-2 .span-header span {
+    color: #90b7cb;
+    font-size: 2vw;
+  }
   .bg-squares-3 {
     background-color: #2c2c2c;
   }
+  .bg-squares-3 h2 {
+    font-size: 9vw;
+    margin-top: 30px;
+  }
+  .bg-squares-3 .span-header {
+    font-size: 3vw;
+    margin-bottom: 30px;
+  }
+  .bg-squares-3 h2 .header-highlight {
+    font-size: 9vw;
+  }
   .bg-squares-4 {
+    padding-top: 50px;
     background-color: white;
   }
   .pipefy-form {
@@ -552,5 +596,34 @@ footer {
   }
   .right-box {
     display: none;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer img {
+    margin-top: 10px;
+  }
+  .media {
+    position: static;
+    width: 90%;
+  }
+  .media a {
+    position: static;
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+  }
+  .info {
+    width: 90%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 90px;
+    justify-content: flex-start;
+  }
+  .info > * {
+    height: 30px;
+  }
+  .info > *:last-child {
+    margin-top: 13px;
   }
 }

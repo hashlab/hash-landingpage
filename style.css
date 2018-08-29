@@ -607,8 +607,8 @@ footer {
     flex-wrap: nowrap;
     font-size: 6vw;
     flex-direction: row;
-    margin-top: 2vw;
-    margin-bottom: 0.5vw;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
   }
   .left-box.three-texts.mobile div div div h3 {
     margin-top: 1vw;

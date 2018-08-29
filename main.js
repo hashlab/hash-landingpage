@@ -83,22 +83,22 @@ const secondY = 290
 Promise.resolve()
 .then(wait(500))
 .then(() => {
-  if (window.scrollY !== 0) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
   ilustras.fourthBig.style.transform = `translate(0, ${startY}px)`
 })
 .then(wait(120))
 .then(() => {
-  if (window.scrollY !== 0) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
   ilustras.thirdBig.style.transform = `translate(0, ${startY}px)`
 })
 .then(wait(120))
 .then(() => {
-  if (window.scrollY !== 0) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
   ilustras.secondBig.style.transform = `translate(0, ${startY}px)`
 })
 .then(wait(120))
 .then(() => {
-  if (window.scrollY !== 0) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
   ilustras.firstBig.style.transform = `translate(0, ${startY}px)`
 })
 .catch(() => {
@@ -113,6 +113,9 @@ window.onscroll = scrollTriggered
 var snapTimer = null
 
 function firstSquareTest (scroll, opacity, translateY) {
+  if (window.innerWidth < 1070) {
+    return
+  }
   firstSquareShown = !!opacity
   Promise.resolve()
     .then(wait(100))
@@ -189,11 +192,10 @@ function thirdSquareTest (scroll, opacity, translateY) {
 }
 
 function scrollTriggered () {
+  if (window.innerWidth < 1070) { return }
   const scroll = window.scrollY
 
-  if (!firstSquareShown) {
-    firstSquareTest(scroll, 1, 20)
-  }
+  firstSquareTest(scroll, 1, 20)
 
   if (
     scroll > scrollSteps[1] - 500 &&
@@ -393,6 +395,12 @@ document.querySelector('.bg-squares-4').appendChild(frame)
 
 
 const checkSize = e => {
+  if (window.innerWidth < 1070) {
+    document.body.style.zoom = 1
+    scrollSteps = initialScrollSteps
+    return
+  }
+  window.innerWidth
   if (window.innerWidth < 1450) {
     document.body.style.zoom = 0.8
     scrollSteps = initialScrollSteps.map(s => s * parseFloat(document.body.style.zoom))

@@ -32,7 +32,7 @@
   <header>
     <div>
       <img src="SMALL/logo_menu.png" width="112px" height="33px" style="cursor:pointer;" onclick="window.scroll({ top: 0, behavior: 'smooth'})"/>
-      <a class="header-link home" onclick="window.scroll({ top: 0 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})" style="margin-left: 72px">
+      <a class="header-link home" onclick="window.scroll({ top: 0 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})">
         início
       </a>
       <a class="header-link about" onclick="window.scroll({ top: 850 * parseFloat(window.document.body.style.zoom), behavior: 'smooth'})">
@@ -51,10 +51,18 @@
   </header>
 
   <div class="container">
+
+    <div class="left-box ilustras hide-big">
+      <img src="./ILUSTRA/ILU_4.png"/>
+      <img src="./ILUSTRA/ILU_3.png"/>
+      <img src="./ILUSTRA/ILU_2.png"/>
+      <img src="./ILUSTRA/ILU_1.png"/>
+    </div>
+
     <div class="left-box bg-squares-1">
       <div class="bg1-1">
         <h2 class="header-1">
-          Traga <span class="header-highlight">as melhores</span> soluções financeiras
+          Traga as <span class="header-highlight">melhores</span> soluções financeiras
           para dentro do
           seu <span class="header-highlight">negócio</span>
         </h2>
@@ -85,6 +93,7 @@
       <img class="ilustra animation-1" src="./ILUSTRA/ILU_1.png" width="605px" height="830px" style="transform:translate(0, 20px)"/>
     </div>
 
+
     <!--  ========================================== -->
 
     <div class="left-box bg-squares-2">
@@ -96,16 +105,19 @@
       <span class="span-header bg2-2">
         Uma fintech que possibilita o acesso de <b>qualquer empresa</b> ao mercado de pagamentos. Permitimos a gestão end-to-end do negócio, desde a afiliação de clientes até a gestão dos principais indicadores da operação.
         <br /><br />
-        <br /><br />
-       <span style="color: #90b7cb;font-size: 15px;">Nossos investidores:</span>
+        <br class="hide-small"/><br class="hide-small"/>
+       <span>Nossos investidores:</span>
       </span>
       <div class="investors bg2-3">
-        <img src="./SMALL/canary.png" width="127px" height="58px"/>
+        <a href="http://canary.com.br/">
+          <img src="./SMALL/canary.png" width="127px" height="58px"/>
+        </a>
         <span class="fancyE">&</span>  
-        <img src="./SMALL/kaszek.png" width="127px" height="58px"/>
+        <a href="https://www.kaszek.com/">
+          <img src="./SMALL/kaszek.png" width="127px" height="58px"/>
+        </a>
       </div>
     </div>
-
     <div class="right-box three-texts">
       <div>
         <div class="box1-3" style="margin-top: 30px">
@@ -136,6 +148,45 @@
         </div>
       </div>
     </div>
+    <div class="left-box hide-big three-texts mobile">
+      <div>
+        <div class="box1-3">
+          <div>
+            <img src="./SMALL/brain.png"/>
+            <h3>
+              Especialistas no mercado de payments
+            </h3>
+          </div>
+          <span>
+            Ajudamos nossos clientes a mapear, desenvolver e implementar soluções financeiras que viabilizam seu modelo de negócios ou que adicionam novas linhas de receita.
+          <span>
+        </div>
+        <div class="box2-3">
+          <div>
+            <img src="./SMALL/money.png"/>
+            <h3>
+              Hash
+              Payment
+              Platform
+            </h3>
+          </div>
+          <span>
+              Nossa plataforma whitelabel permite aos nossos clientes afiliar estabelecimentos com facilidade, automatizar sua gestão, gerenciar as maquininhas e escalar seu negócio de pagamentos.
+          <span>
+        </div>
+        <div class="box3-3">
+          <div>
+            <img src="./SMALL/module.png" />
+            <h3>
+              Infraestrutura escalável e modular
+            </h3>
+          </div>
+          <span>
+            Através de tecnologia, reduzimos a burocracia para operações de subadquirência, melhorando processos e reduzindo custos de operação para empresas que são ou querem se tornar subadquirentes.
+          <span>
+        </div>
+      </div>
+    </div>
 
     <!--  ========================================== -->
 
@@ -146,7 +197,7 @@
         para seus clientes
       </h2>
       <span class="span-header bg3-2">
-          Um único ponto de contato para gerenciar toda a operação de subadquirente.
+          Gerencie a operação de subadquirência de ponta a ponta em uma única plataforma, simples e intuitiva
       </span>
     </div>
 
@@ -213,6 +264,68 @@
       </div>
     </div>
     
+    <div class="left-box six-texts mobile hide-big">
+      <div>
+        <div>
+          <div class="box1-6">
+            <img src="ILUSTRA/CAPTURA.png"/>
+            <h3>
+              MEIO DE CAPTURA
+            </h3>
+            <span>
+              white label
+            <span>
+          </div>
+          <div class="box2-6">
+            <img src="ILUSTRA/FORNECEDORES.png"/>
+            <h3>
+              SPLIT DE PAGAMENTO
+            </h3>
+            <span class="dashes">
+              -------------------------------------------
+            <span>
+          </div>
+          <div class="box3-6">
+            <img src="ILUSTRA/WALLET.png"/>
+            <h3>
+              CARTEIRA DIGITAL
+            </h3>
+            <span>
+              white label
+            <span>
+          </div>
+        </div>
+        <div>
+          <div class="box4-6">
+            <img src="ILUSTRA/CARDS.png"/>
+            <h3>
+              EMISSÃO DE CARTÃO
+            </h3>
+            <span>
+              white label
+            <span>
+          </div>
+          <div class="box5-6">
+            <img src="ILUSTRA/CONCILIAÇÃO.png"/>
+            <h3>
+              CONCILIAÇÃO &nbsp&nbspFINANCEIRA
+            </h3>
+            <span class="dashes">
+              -------------------------------------------
+            <span>
+          </div>
+          <div class="box6-6">
+            <img src="ILUSTRA/BANKING.png"/>
+            <h3>
+              CONTROLE DE FRAUDE
+            </h3>
+            <span class="dashes">
+              -------------------------------------------
+            <span>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--  ========================================== -->
 
     <script src="smoothscroll.js"></script>
@@ -234,11 +347,9 @@
     <img src="SMALL/logo_footer.png" width="91px" height="91px" style="margin-left: 20px;cursor:pointer;" onclick="window.scroll({ top: 0, behavior: 'smooth'})">
     
     <div class= "info">
-      <div class="contato"> <img src="SMALL/mail.png" width="19px" height="15px"/> <span>contato@hash.com.br</span> </div>
-      <div class="location"> <img src="SMALL/location.png" width="15px" height="20px"/> <span><b>Rua Cláudio Soares, 72 - Pinheiros - SP</b></span> </div>
+      <div class="location"> <img  class="hide-small" src="SMALL/location.png" width="15px" height="20px"/> <span><b>Rua Capitão Antonio Rosa, 409 - Pinheiros, SP</b></span> </div>
       <span>© Copyright 2018 Hash Lab Solucoes Pagamento LTDA</span>
     </div>
-
     <div class="media">
       <a href="https://pt.linkedin.com/company/hash-lab" target="_blank"> /hash-lab <img src="SMALL/social_linkedin.png" width="22px" height="24px"/> </a>
       <a href="https://www.twitter.com/hashdevs" target="_blank"> /hashdevs <img src="SMALL/social_twitter.png" width="22px" height="24px"/> </a>

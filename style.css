@@ -306,20 +306,27 @@ header div img {
   background-image: url("./L4_WHITE.png");
   height: 1005px;
   padding: 60px;
+  padding-right: 140px;
 }
 .bg-squares-4 h2 {
   color: #85acbc;
   margin: 0;
   margin-left: 36px;
 }
+
+.bg-squares-4 > span {
+  color: #85acbc;
+  margin: 0;
+  margin-left: 36px;
+  padding: 10px;
+}
 .bg-squares-4 .header-highlight {
   color: #2c2c2c;
 }
-
 .pipefy-form {
 	width: 83%;
-  height: 1000px;
-  margin-top: 10px;
+  height: 400px;
+  margin-top: 60px;
 }
 
 .pp-new-public-form-embedded {
@@ -734,7 +741,7 @@ footer {
   .info > * {
     margin-top: 2vw;
     margin-bottom: 2vw;
-    font-size: 3.5vw;
+    font-size: 3.3vw;
   }
   .info > span {
     font-size: 5vw;
@@ -763,4 +770,16 @@ footer {
     height: auto;
     margin-top: 0;
   }
+}
+
+.associado {
+  max-width: 100px;
+  max-height: 100px;
+  align-self: center;
+}
+
+.associados {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
 }

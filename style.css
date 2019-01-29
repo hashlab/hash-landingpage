@@ -148,7 +148,6 @@ header div img {
 }
 .span-header {
   width: 507px;
-  height: 84px;
   font-family: 'Noto Sans', sans-serif;
   font-size: 19px;
   line-height: 1.47;
@@ -326,7 +325,7 @@ header div img {
 .pipefy-form {
 	width: 83%;
   height: 400px;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .pp-new-public-form-embedded {
@@ -719,6 +718,11 @@ footer {
     margin-left: 5vw;
     font-size: 10vw;
     margin-top: 10vw;
+  }
+  .bg-squares-4 span {
+    margin-left: 5vw;
+    font-size: 5vw;
+    margin-top: 5px;
   }
   .bg-squares-4 h2 .header-highlight {
     font-size: 10vw;

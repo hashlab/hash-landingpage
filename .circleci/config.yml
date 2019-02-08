@@ -14,7 +14,7 @@ jobs:
       # Deploy branch to S3
       - run:
           name: Deploy to S3
-          command: aws s3 sync . s3://www.hash.com.br/ --exclude ".git/*" --exclude ".circleci/*" --delete
+          command: aws s3 sync . s3://hash.com.br/ --exclude ".git/*" --exclude ".circleci/*" --delete
       # Invalidate cache
       - run:
           name: Invalidate cache

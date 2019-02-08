@@ -15,6 +15,10 @@ jobs:
       - run:
           name: Deploy to S3
           command: aws s3 sync . s3://www.hash.com.br/ --exclude ".git/*" --exclude ".circleci/*" --delete
+      # Invalidate cache
+      - run:
+          name: Invalidate cache
+          command: aws cloudfront create-invalidation --distribution-id EUVVXLPERM27C --paths "/*"
 workflows:
   version: 2
   deploy_to_s3:

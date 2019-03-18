@@ -462,12 +462,9 @@ footer {
   font-size: 15px;
 }
 
-
-
-
-  .hide-big {
-    display: none;
-  }
+.hide-big {
+  display: none;
+}
 
 
 @media (max-width: 1070px) {
@@ -798,4 +795,23 @@ footer {
     max-height: 80px;
     align-self: center;
   }
+}
+
+.pipe-form {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 30px;
+font-family: 'Noto Sans', sans-serif;
+color: #4e6e7d;
+}
+
+
+.pipe-form input {
+  height: 30px;
+}
+
+input.pipe-form-button  {
+  border: solid 1px #4e6e7d;
+  margin-top: 20px;
 }

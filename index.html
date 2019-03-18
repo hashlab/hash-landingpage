@@ -14,6 +14,8 @@
   <meta property="og:description" content="Construa a melhor experiência financeira para seus clientes">
   <meta property="og:image" content="SMALL/whatsapp.png">
 
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
   <!-- Google Analytics -->
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
@@ -342,7 +344,28 @@
         <br/><br/>
         Quer saber mais? Deixe seu contato e entraremos em contato quando tivermos mais novidades.
       </i></span>
-      <div class="pipe"></div>
+      <div class="pipe">
+          
+          <form class="pipe-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+          
+          <input type=hidden name="oid" value="00D1U0000011WT3">
+          
+          <input type=hidden name="retURL" value="http://hash.com.br">
+          
+          <label for="first_name">Nome</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+          
+          <label for="last_name">Sobrenome</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+          
+          <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+          
+          <label for="company">Empresa</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+          
+          <label for="description">Mensagem</label><textarea name="description"></textarea><br>
+          
+          <input class="pipe-form-button" type="submit" name="submit" value="Enviar" />
+          
+          </form>
+      </div>
       <!-- <div class="associados">
         <img class="associado" src="SMALL/abfintech.png" />
         <img class="associado" src="SMALL/o2o.png" />

@@ -16,6 +16,9 @@
 
   <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
+  <!-- Google reCAPTCHA V2 -->
+  <script src="https://www.google.com/recaptcha/api.js?hl=pt-br" async defer></script>
+
   <!-- Google Analytics -->
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
@@ -361,8 +364,10 @@
           <label for="company">Empresa</label><input required=true id="company" maxlength="40" name="company" size="20" type="text" /><br>
           
           <label for="description">Mensagem</label><textarea required=true name="description"></textarea><br>
+
+          <div class="g-recaptcha" data-sitekey="6Le9VL8UAAAAAPcHXGB8YCUNNtjjypRxV7ceLaR6" data-callback="enableSubmit"></div><br>
           
-          <input class="pipe-form-button" type="submit" name="submit" value="Enviar" />
+          <input id="submit" class="pipe-form-button" type="submit" name="submit" value="Enviar" />
           
           </form>
       </div>

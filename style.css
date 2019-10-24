@@ -815,3 +815,7 @@ input.pipe-form-button  {
   border: solid 1px #4e6e7d;
   margin-top: 20px;
 }
+
+input:disabled  {
+  opacity: 0.5;
+}

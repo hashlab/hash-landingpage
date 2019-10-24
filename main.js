@@ -2,8 +2,13 @@ window.beforeunload = () => {
   window.scrollTo(0, 0)
 }
 
-window.onload = () => {
+function enableSubmit(token) {
+  document.getElementById('submit').disabled = false
+}
 
+window.onload = () => {
+document.getElementById('submit').disabled = true
+  
 function lerp(v0, v1, t) {
   t = Math.min(1, t)
   t = Math.max(0, t)
@@ -365,6 +370,7 @@ function fourthAnimation (t1, t2, t3, t4) {
     lerp(250, -200, t3)
   }px)`
 }
+
 if (window.scrollY !== 0) {
   scrollTriggered()
 }

@@ -2,12 +2,12 @@ window.beforeunload = () => {
   window.scrollTo(0, 0)
 }
 
-function enableSubmit(token) {
-  document.getElementById('submit').disabled = false
-}
+// function enableSubmit(token) {
+//   document.getElementById('submit').disabled = false
+// }
 
 window.onload = () => {
-document.getElementById('submit').disabled = true
+// document.getElementById('submit').disabled = true
   
 function lerp(v0, v1, t) {
   t = Math.min(1, t)

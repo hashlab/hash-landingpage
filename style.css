@@ -467,7 +467,7 @@ footer {
 
 .bg-squares-2 .span-header span {
   color: #90b7cb;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .hide-big {
@@ -615,8 +615,9 @@ footer {
     height: 15vw;
   }  
   .bg-squares-2 .span-header {
-    font-size: 2vw;
-    margin-top: 3vw;
+    font-size: 4vw;
+    margin-top: 5vw;
+    width: 90%;
   }
   .bg-squares-2 .investors {
     position: static;

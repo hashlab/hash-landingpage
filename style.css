@@ -153,6 +153,14 @@ header div img {
   line-height: 1.47;
   color: #7e7e7e;
 }
+.bg-squares-2 .span-header {
+  width: 507px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.47;
+  color: #7e7e7e;
+  margin-top: 10px;
+}
 .bg-squares-4 .span-header {
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
@@ -279,8 +287,8 @@ header div img {
 }
 .six-texts > div > div > div {
   margin: 0 60px;
-  min-width: 100px;
-  max-width: 100px;
+  min-width: 120px;
+  max-width: 120px;
   font-size: 14px;
   line-height: 1.21;
   color: #6f97aa;
@@ -467,7 +475,7 @@ footer {
 }
 
 
-@media (max-width: 1070px) {
+@media (max-width: 1100px) {
   * {
     transform: none !important;
     transition: none !important;
@@ -607,7 +615,7 @@ footer {
     height: 15vw;
   }  
   .bg-squares-2 .span-header {
-    font-size: 3vw;
+    font-size: 2vw;
     margin-top: 3vw;
   }
   .bg-squares-2 .investors {

@@ -82,12 +82,12 @@ const towersInitialXY = [
   { x: 171, y: -46, },
 ]
 const towerMiddleXY = [
-  { x: -220, y: -149, },
-  { x: -222, y: -324, },
+  { x: -240, y: -149, },
+  { x: -242, y: -324, },
   { x: 0, y: -318, },
   { x: 0, y: -137, },
-  { x: 220, y: -137, },
-  { x: 220, y: -320, },
+  { x: 240, y: -137, },
+  { x: 240, y: -320, },
 ]
 
 const startY = 55
@@ -96,22 +96,22 @@ const secondY = 290
 Promise.resolve()
 .then(wait(500))
 .then(() => {
-  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1100) { throw 0 }
   ilustras.fourthBig.style.transform = `translate(0, ${startY}px)`
 })
 .then(wait(120))
 .then(() => {
-  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1100) { throw 0 }
   ilustras.thirdBig.style.transform = `translate(0, ${startY}px)`
 })
 .then(wait(120))
 .then(() => {
-  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1100) { throw 0 }
   ilustras.secondBig.style.transform = `translate(0, ${startY}px)`
 })
 .then(wait(120))
 .then(() => {
-  if (window.scrollY !== 0 || window.innerWidth < 1070) { throw 0 }
+  if (window.scrollY !== 0 || window.innerWidth < 1100) { throw 0 }
   ilustras.firstBig.style.transform = `translate(0, ${startY}px)`
 })
 .catch(() => {
@@ -126,7 +126,7 @@ window.onscroll = scrollTriggered
 var snapTimer = null
 
 function firstSquareTest (scroll, opacity, translateY) {
-  if (window.innerWidth < 1070) {
+  if (window.innerWidth < 1100) {
     return
   }
   firstSquareShown = !!opacity
@@ -205,7 +205,7 @@ function thirdSquareTest (scroll, opacity, translateY) {
 }
 
 function scrollTriggered () {
-  if (window.innerWidth < 1070) { return }
+  if (window.innerWidth < 1100) { return }
   const scroll = window.scrollY
 
   firstSquareTest(scroll, 1, 20)
@@ -385,7 +385,7 @@ if (window.scrollY !== 0) {
 
 var scrollingTimer;
 window.addEventListener('scroll', () => {
-  if (window.innerWidth < 1070) {
+  if (window.innerWidth < 1100) {
     return
   }
   const scroll = window.scrollY
@@ -412,7 +412,7 @@ window.addEventListener('scroll', () => {
 
 
 const checkSize = e => {
-  if (window.innerWidth < 1070) {
+  if (window.innerWidth < 1100) {
     document.body.style.zoom = 1
     scrollSteps = initialScrollSteps
     return

@@ -346,29 +346,21 @@
       </i></span> -->
       <div class="pipe">
           
-          <form class="pipe-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+          <form class="pipe-form" action="mailto:vendas@hash.com.br?subject=Contact Hash" method="POST" enctype="text/plain">
 
-          <input type=hidden name="oid" value="00D1U0000011WT3">
+          <label for="Name">Name</label><input required=true id="Name" maxlength="40" name="Name" size="20" type="text" /><br>
 
-          <input type=hidden name="retURL" value="http://hash.com.br">
+          <label for="Surname">Surname</label><input required=true id="Surname" maxlength="80" name="Surname" size="20" type="text" /><br>
 
-          <input type=hidden name="lead_source" value="Web">
+          <label for="Comercial Email">Comercial Email</label><input required=true id="Comercial Email" maxlength="80" name="Comercial Email" size="20" type="text" /><br>
 
-          <label for="first_name">Name</label><input required=true id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+          <label for="Company">Company</label><input required=true id="Company" maxlength="40" name="Company" size="20" type="text" /><br>
 
-          <label for="last_name">Surname</label><input required=true id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
-
-          <label for="email">Comercial Email</label><input required=true id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-          <label for="company">Company</label><input required=true id="company" maxlength="40" name="company" size="20" type="text" /><br>
-
-          <label for="description">Message</label><textarea required=true name="description"></textarea><br>
-
-          <div class="g-recaptcha" data-sitekey="6Le9VL8UAAAAAPcHXGB8YCUNNtjjypRxV7ceLaR6" data-callback="enableSubmit"></div><br>
+          <label for="Message">Message</label><textarea required=true name="Message"></textarea><br>
 
           <div style="display:flex;align-items:center;"><input id="check" type="checkbox" /><label for="check">I've read and agree to the <a href="http://hash.com.br/privacidade.pdf">Hash privacy policy and terms</a></label></div>
 
-          <input id="submit" class="pipe-form-button" type="submit" name="submit" value="Enviar" />
+          <input id="submit" class="pipe-form-button" type="submit" />
 
           </form>
       </div>
